@@ -1,0 +1,5 @@
+== JsonToGdxRubyFFI ==
+
+Convert Ruby hash to GDX.
+
+Dependencies: JsonToGdx.so
