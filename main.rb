@@ -22,7 +22,8 @@ cap .. sum(i, w(i) * x(i)) =l= C;
 
 model knapsack /obj, cap/;
 
-$GDXIN knapsack_data.gdx
+$if not set gdxincname $abort \'no include file name for data file provided\'
+$GDXIN %gdxincname%
 $LOAD i, v, w, C
 $GDXIN
 
@@ -49,7 +50,7 @@ class Main
 
     JsonToGdx.set_gams_directories('/home/andre/Downloads/gams24.9_linux_x64_64_sfx/', '/home/andre/Desktop/')
     # JsonToGdx.write_obj_to_gdx_file({sets: [{name: 'j', from: 1, to: 10}]}, "someotherruby.gdx")
-    res = JsonToGdx.solve_model_with_data_obj(KS_GAMS_CODE, 'knapsack_data.gdx', KS_DATA_OBJ)
+    res = JsonToGdx.solve_model_with_data_obj(KS_GAMS_CODE, KS_DATA_OBJ)
     puts res
   end
 end
