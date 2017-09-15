@@ -140,6 +140,17 @@ RCPSP_ROC_DATA_OBJ = {
 module Examples
   def self.knapsack
     res = JsonToGdx.solve_model_with_data_obj(KS_GAMS_CODE, KS_DATA_OBJ)
+    for r in res["results"]
+      if r["name"] == 'Z'
+        objval = r["level"]
+      elsif r["name"] == 'x'
+        xvars = r["levels"]
+      end
+    end
+    puts "objective value: #{objval}"
+    for xvar in xvars
+      puts "#{xvar.keys[0]}=#{xvar.values[0]}"
+    end
     puts res
   end
 

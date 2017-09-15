@@ -12,8 +12,8 @@ class Main
 
     JsonToGdx.set_gams_directories('/home/andre/Downloads/gams24.9_linux_x64_64_sfx/', '/home/andre/Desktop/')
     # JsonToGdx.write_obj_to_gdx_file({sets: [{name: 'j', from: 1, to: 10}]}, "someotherruby.gdx")
-    #Examples.knapsack
-    Examples.rcpsp_roc
+    Examples.knapsack
+    #Examples.rcpsp_roc
   end
 end
 
