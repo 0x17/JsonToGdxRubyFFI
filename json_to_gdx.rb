@@ -1,4 +1,3 @@
-
 require 'ffi'
 
 #JSON_GDX_LIB_PATH = '/media/sf_Dropbox/Arbeit/Code/JsonToGdx/cmake-build-debug/libJsonToGdxLib.so'
@@ -18,6 +17,6 @@ module JsonToGdx
   end
   
   def self.solve_model_with_data_obj(modelcode, obj)
-    return solve_model_with_data_json_str(modelcode, JSON.generate(obj))
+    return JSON.parse(solve_model_with_data_json_str(modelcode, JSON.generate(obj)))
   end
 end
