@@ -1,7 +1,9 @@
 require 'ffi'
 
-#JSON_GDX_LIB_PATH = '/media/sf_Dropbox/Arbeit/Code/JsonToGdx/cmake-build-debug/libJsonToGdxLib.so'
-JSON_GDX_LIB_PATH = '/home/andre/Dropbox/Arbeit/Code/JsonToGdx/cmake-build-debug/libJsonToGdxLib.so'
+JSON_GDX_LIB_PATH_VM = '/media/sf_Dropbox/Arbeit/Code/JsonToGdx/cmake-build-debug/libJsonToGdxLib.so'
+JSON_GDX_LIB_PATH_LINUX = '/home/andre/Dropbox/Arbeit/Code/JsonToGdx/cmake-build-debug/libJsonToGdxLib.so'
+JSON_GDX_LIB_PATH_OSX = '/Users/andreschnabel/Dropbox/Arbeit/Code/JsonToGdx/cmake-build-debug/libJsonToGdxLib.dylib'
+JSON_GDX_LIB_PATH = if (/darwin/ =~ RUBY_PLATFORM) != nil then JSON_GDX_LIB_PATH_OSX else JSON_GDX_LIB_PATH_VM end
 
 module JsonToGdx
   extend FFI::Library
